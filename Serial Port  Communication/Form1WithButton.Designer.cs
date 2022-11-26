@@ -259,21 +259,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox.BackColor = System.Drawing.SystemColors.Control;
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox.Location = new System.Drawing.Point(6, 12);
+            this.textBox.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBox.Location = new System.Drawing.Point(6, 13);
             this.textBox.MaxLength = 0;
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.Size = new System.Drawing.Size(251, 354);
+            this.textBox.Size = new System.Drawing.Size(220, 353);
             this.textBox.TabIndex = 11;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox);
-            this.groupBox4.Location = new System.Drawing.Point(241, 6);
+            this.groupBox4.Location = new System.Drawing.Point(245, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(263, 372);
+            this.groupBox4.Size = new System.Drawing.Size(232, 372);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             // 
@@ -283,7 +284,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(516, 390);
+            this.ClientSize = new System.Drawing.Size(490, 390);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

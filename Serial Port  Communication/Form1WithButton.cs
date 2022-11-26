@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -8,10 +9,18 @@ namespace Serial_Port__Communication
 
     public partial class MainWindow : Form
     {
+        private void DrawRectangle()
+        {
+            System.Drawing.Pen myPen = new System.Drawing.Pen(System.Drawing.Color.Red);
+            System.Drawing.Graphics formGraphics;
+            formGraphics = this.CreateGraphics();
+            formGraphics.DrawRectangle(myPen, new Rectangle(2, 2, 20, 30));
+            myPen.Dispose();
+            formGraphics.Dispose();
+        }
+        string dataIN;
 
-        string dataIN; 
         
-
         public MainWindow()
         {
             InitializeComponent();
@@ -21,9 +30,9 @@ namespace Serial_Port__Communication
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxCOMPort.Items.AddRange(ports);
-
+            
         }
-
+        
         private void btnOpen_Click(object sender, EventArgs e)
         {
             try
@@ -62,10 +71,10 @@ namespace Serial_Port__Communication
             { 
                 if (serialPort1.IsOpen)
                 {
-
+                    
                     serialPort1.WriteLine("@COLLAUDO" + DateTime.Now.ToString("yyyy/dd/MM HH.mm.ss"));
                     textBox.Text += "@COLLAUDO" + DateTime.Now.ToString("yyyy/dd/MM HH.mm.ss") + Environment.NewLine;
-               
+                    
                 }
             }
             catch (Exception err)
@@ -82,8 +91,11 @@ namespace Serial_Port__Communication
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            
             textBox.SelectionStart = textBox.Text.Length;
             textBox.ScrollToCaret();
+            
+
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
